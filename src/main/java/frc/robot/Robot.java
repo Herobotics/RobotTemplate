@@ -1,6 +1,7 @@
 package frc.robot;
 
 import frc.robot.subSystems.chassis.Chassis;
+import frc.robot.subSystems.example.Example;
 
 import frc.robot.autonomous.AutoSelector;
 
@@ -19,12 +20,13 @@ import edu.wpi.first.wpilibj.command.Scheduler;
  * autoPeriodic/telePeriodic - Run the Command scheduler
  */
 public class Robot extends TimedRobot {
-	
+
 	@Override
 	public void robotInit(){
 		Controller.initalize();
 		AutoSelector.initalize();
 		Chassis.initalize();
+		Example.initalize();
 	}
 
 	@Override
