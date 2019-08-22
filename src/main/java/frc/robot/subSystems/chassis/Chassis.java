@@ -30,10 +30,6 @@ public class Chassis extends Subsystem {
 	// Scaler for if we want to switch the direction
 	public double driveScale = 1;
 
-	// private AHRS gyro;
-
-	private DigitalOutput frontLED;
-
 	public Chassis(){
 		// Setting up everything for the right side of the left
 		leftMotor1 = new Talon(RobotMap.DRIVE_LEFT_MOTOR1);
@@ -49,9 +45,6 @@ public class Chassis extends Subsystem {
 		leftEncoder.setDistancePerPulse(RobotMap.DRIVE_ENCODER_PULSE_RATE);
 		// The right is negitive because it is a mirror of the left side
 		rightEncoder.setDistancePerPulse(-RobotMap.DRIVE_ENCODER_PULSE_RATE);
-
-		// Setting up the gyroscope
-		// gyro = new AHRS(SPI.Port.kMXP);
 
 		frontLED = new DigitalOutput(RobotMap.DRIVE_DIRECTION_LED);
 
@@ -82,7 +75,7 @@ public class Chassis extends Subsystem {
 	}
 
 	public void resetGyro(){
-		// gyro.reset();
+
 	}
 
 	public void reset(){
@@ -123,7 +116,6 @@ public class Chassis extends Subsystem {
 	}
 
 	public double getRotation(){
-		// double angle = gyro.getAngle();
 		double angle = 0;
 		SmartDashboard.putNumber("Chassis Angle", angle);
 		return angle;
