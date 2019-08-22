@@ -12,7 +12,7 @@ def ROBOT_MAIN_CLASS = "frc.robot.Main"
 // This is added by GradleRIO's backing project EmbeddedTools.
 deploy {
     targets {
-        roboRIO("roborio") {
+        roboRIO("roborio"){
             // Team number is loaded either from the .wpilib/wpilib_preferences.json
             // or from command line. If not found an exception will be thrown.
             // You can use getTeamOrDefault(team) instead of getTeamNumber if you
@@ -21,13 +21,13 @@ deploy {
         }
     }
     artifacts {
-        frcJavaArtifact('frcJava') {
+        frcJavaArtifact('frcJava'){
             targets << "roborio"
             // Debug can be overridden by command line, for use with VSCode
             debug = frc.getDebugOrDefault(false)
         }
         // Built in artifact to deploy arbitrary files to the roboRIO.
-        fileTreeArtifact('frcStaticFileDeploy') {
+        fileTreeArtifact('frcStaticFileDeploy'){
             // The directory below is the local directory to deploy
             files = fileTree(dir: 'src/main/deploy')
             // Deploy to RoboRIO target, into /home/lvuser/deploy

@@ -6,9 +6,9 @@ pluginManagement {
         gradlePluginPortal()
         String frcYear = '2019'
         File frcHome
-        if (OperatingSystem.current().isWindows()) {
+        if (OperatingSystem.current().isWindows()){
             String publicFolder = System.getenv('PUBLIC')
-            if (publicFolder == null) {
+            if (publicFolder == null){
                 publicFolder = "C:\\Users\\Public"
             }
             frcHome = new File(publicFolder, "frc${frcYear}")
